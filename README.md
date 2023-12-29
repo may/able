@@ -9,12 +9,24 @@ homepage: https://common-lisp.net/project/able/
    ```
    sudo apt install tk
    ```
+
+   For MacOS:
+   ```
+   brew install tcl-tk
+   ```
+
 2. Install Common Lisp if you haven't already:
    
    For Ubuntu Linux/Debian/Pop_OS:
    ```
    sudo apt install sbcl
    ```
+
+   For MacOS:
+   ```
+   brew install sbcl
+   ```
+
 
 3. Install QuickLisp if you haven't already, following the *official* instructions here: [https://www.quicklisp.org](https://www.quicklisp.org).
 
