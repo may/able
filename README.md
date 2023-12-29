@@ -65,8 +65,25 @@ homepage: https://common-lisp.net/project/able/
     ```
     sbcl --eval "(ql:quickload \"able\")" --eval "(able::start)" --eval "(exit)"
     ```
+8. Next time: launch the editor much faster:
 
-8. When you use SBCL (or most other Common Lisp implementations) outside of 
+   Do this once:
+   ```
+   cd ~/quicklisp/local-projects/able/
+   ```
+   ```
+   sbcl --eval "(ql:quickload \"able\")" --eval "(sb-ext:save-lisp-and-die \"able.core\")"
+   ```
+
+   Do this every time! (**much** faster!):
+
+   ```
+   sbcl --core ~/quicklisp/local-projects/able/able.core --eval "(able::start)" --eval "(exit)"
+   ```
+
+10. Optional, extra credit: Make your REPL better!
+
+    When you use SBCL (or most other Common Lisp implementations) outside of ABLE, try using [sbcli](https://github.com/hellerve/sbcli), which makes the REPL much nicer (up/down arrow keys work to recall what you've typed yesterday, for example).
 
 # Features:
 
@@ -81,6 +98,10 @@ homepage: https://common-lisp.net/project/able/
 Missing features:
 
 - graphical interactive debugger (only native debugger available)
+- saving REPL history across sessions
+
+![image](https://github.com/may/able/assets/82888/5e0eadea-f874-46b5-8d9c-9b733ae6e689)
+
 
 ![](able1.png)
 
