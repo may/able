@@ -8,12 +8,12 @@
 
 (in-package :able)
 
-(defparameter *window-width* 640)
-(defparameter *window-height* 480)
+(defparameter *window-width* 825) ; 80px @ 12pt; else 1366)
+(defparameter *window-height* 768)
 (defparameter *window-x* 30)
 (defparameter *window-y* 30)
 
-(defparameter *listener-lines* 10
+(defparameter *listener-lines* 15
   "The number of text output lines to display in the listener. The listener can
   be scrolled using the mouse wheel but only this number of lines are displayed
   at a time.")
@@ -30,14 +30,14 @@
 ;;; names (refer to the Tcl/Tk documentation).
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defparameter *highlight-text* "#2D1E27")
-(defparameter *highlight-background* "#FFFFFF")
-(defparameter *highlight-primary* "#1900D5")
-(defparameter *highlight-secondary* "#991C1C")
-(defparameter *highlight-comments* "#00732A")
-(defparameter *highlight-paren-match* "#F3752F")
-(defparameter *highlight-error* "#FF4343")
+; dark theme                                     ; light theme
+(defparameter *highlight-text* "#FFFFFF")        ; "#2D1E27") ; foreground
+(defparameter *highlight-background* "#000000")  ;"#FFFFFF")  ; background
+(defparameter *highlight-primary* "#99ccff")     ; "#1900D5") ; eg defun
+(defparameter *highlight-secondary* "#ff9999")   ; "#991C1C") ; eg CL-USER>
+(defparameter *highlight-comments* "#00ff00")    ; "#00732A") 
+(defparameter *highlight-paren-match* "#cc99ff") ; "#F3752F")
+(defparameter *highlight-error* "#FF4343")       ; same
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
