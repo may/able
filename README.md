@@ -3,7 +3,7 @@ ABLE is a Common Lisp editor based on Tcl/Tk.
 homepage: https://common-lisp.net/project/able/
 
 # How to start it:
-1. Install Tk if not present on your operating system (MacOS should include by default.):
+1. Install Tk if not present on your operating system:
 
    For Ubuntu Linux/Debian/Pop_OS:
    ```
