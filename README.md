@@ -2,7 +2,7 @@ ABLE is a Common Lisp editor based on Tcl/Tk.
 
 homepage: https://common-lisp.net/project/able/
 
-# How to start it:
+# Install & start it:
 1. Install Tk if not present on your operating system:
 
    For Ubuntu Linux/Debian/Pop_OS:
@@ -32,66 +32,55 @@ homepage: https://common-lisp.net/project/able/
 
     Likely the instructions are the following:
     - ```
-      curl -O https://beta.quicklisp.org/quicklisp.lisp
+      curl -o /tmp/ql.lisp http://beta.quicklisp.org/quicklisp.lisp
       ```
     - ```
-      sbcl --load quicklisp.lisp
-      ``` 
-    - ```
-      (quicklisp-quickstart:install)
-      ```
-    - ```
-      (ql:add-to-init-file)
-      ```
-    - ```
-      (exit)
-      ``` 
-    - ```
-      rm quicklisp.lisp 
+      sbcl --no-sysinit --no-userinit --load /tmp/ql.lisp \
+       --eval '(quicklisp-quickstart:install :path "~/.quicklisp")' \
+       --eval '(ql:add-to-init-file)' \
+       --quit
       ```
       
-4. clone the repository where ASDF can find it (in `~/quicklisp/local-projects`):
+4. clone the repository where ASDF can find it (in `~/.quicklisp/local-projects`):
     ```
-    cd ~/quicklisp/local-projects
+    cd ~/.quicklisp/local-projects
     ```
     ```
     git clone https://github.com/may/able.git
     ```
     
-5. launch the editor:
-    ```
-    sbcl
-    ```
-    ```
-    (ql:quickload "able")
-    ```
-    ```
-    (able::start)
-    ```
-6. When you're finished, close the editor window. Then exit SBCL:
-    ```
-    (exit)
-    ```
-       
-7. Next time: launch the editor in one go (and auto-exit in one go):
+5. Next time: launch the editor in one go (and auto-exit in one go):
     ```
     sbcl --eval "(ql:quickload \"able\")" --eval "(able::start)" --eval "(exit)"
     ```
-8. Next time: launch the editor much faster:
+
+    If you recieve the error: `Couldn't execute "wish": No such file or directory` then you forgot to install TK. See step 1. In the meantime, press '3' or whichever number corrosponds to the `Exit SBCL` option.
+
+   ![image](https://github.com/may/able/assets/82888/b95d66e1-d474-4603-8888-59a37566d149)
+
+6. Next time: launch the editor much faster:
 
    Do this once:
    ```
-   cd ~/quicklisp/local-projects/able/
+   cd ~/.quicklisp/local-projects/able/
    ```
    ```
    sbcl --eval "(ql:quickload \"able\")" --eval "(sb-ext:save-lisp-and-die \"able.core\")"
    ```
 
-   Do this every time! (**much** faster!):
+   Do this _every_ time! (**much** faster!):
 
    ```
-   sbcl --core ~/quicklisp/local-projects/able/able.core --eval "(able::start)" --eval "(exit)"
+   sbcl --noinform --core ~/.quicklisp/local-projects/able/able.core --eval "(able::start)" --eval "(exit)"
    ```
+
+7. To make it even easier on yourself, add this line to your `~/.zshrc` or `~.bashrc`:
+
+   ```
+   alias able='sbcl --noinform --core ~/.quicklisp/local-projects/able/able.core --eval "(able::start)" --eval "(exit)"'
+   ```
+
+   Now you can simply type `able` and be off to the races!
 
 10. Optional, extra credit: Make your REPL better!
 
