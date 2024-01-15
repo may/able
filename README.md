@@ -82,10 +82,34 @@ homepage: https://common-lisp.net/project/able/
 
    Now you can simply type `able` and be off to the races!
 
-10. Optional, extra credit: Make your REPL better!
+8. Optional, extra credit: Make your REPL *so* much better!
 
-    When you use SBCL (or most other Common Lisp implementations) outside of ABLE, try using [sbcli](https://github.com/hellerve/sbcli), which makes the REPL much nicer (up/down arrow keys work to recall what you've typed yesterday, for example).
+    Most default Common Lisp REPLs *suck* by default; no readline support, no history support, no nothing.
 
+    But there's hope!
+
+    When you use SBCL (or most other Common Lisp implementations) outside of ABLE, try using [sbcli](https://github.com/hellerve/sbcli), which makes the REPL much nicer (up/down arrow keys work to recall what you've typed yesterday, for example). 
+
+    You can also save a transcript of your session, if needed.
+
+    To install sbcli:
+    1. Download a zip file from: https://github.com/hellerve/sbcli (click the big green Code button)  
+    2. `unzip  unzip sbcli-master.zip `
+    3. cd sbcli-master 
+    4. sudo ./install.sh
+    5. If you've followed the rest of this guide, your `quicklisp` will be in `~/.quicklisp` so you'll have to do this:
+    6. `sudo nano /usr/local/bin/sbcli`
+    7. Add a period before 'quicklisp' in line two:
+    
+
+    8. Save the file with Ctrl-X to exit (answer Yes to saving the changes)
+    9. Type `sbcli`
+    10. Press `Ctrl-D` to exit `sbcli`.
+    11. Bonus points, try the [micro](https://micro-editor.github.io/) editor.
+    Other options: 
+      * [linedit](https://github.com/sharplispers/linedit) (better tab completion, fewer features)
+      * [cl-repl](https://github.com/lisp-maintainers/cl-repl)
+      
 # Features:
 
 - REPL
