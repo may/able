@@ -100,12 +100,15 @@ homepage: https://common-lisp.net/project/able/
     5. If you've followed the rest of this guide, your `quicklisp` will be in `~/.quicklisp` so you'll have to do this:
     6. `sudo nano /usr/local/bin/sbcli`
     7. Add a period before 'quicklisp' in line two:
-    
+       
+    ![Screenshot from 2024-01-14 21-22-31](https://github.com/may/able/assets/82888/eafe3aa9-6ca1-4832-8b53-a510b5f9922d)
 
-    8. Save the file with Ctrl-X to exit (answer Yes to saving the changes)
-    9. Type `sbcli`
-    10. Press `Ctrl-D` to exit `sbcli`.
-    11. Bonus points, try the [micro](https://micro-editor.github.io/) editor.
+
+    9. Save the file with Ctrl-X to exit (answer Yes to saving the changes)
+    10. Type `sbcli`
+    11. Press `Ctrl-D` to exit `sbcli`.
+    12. Bonus points, try the [micro](https://micro-editor.github.io/) editor.
+
     Other options: 
       * [linedit](https://github.com/sharplispers/linedit) (better tab completion, fewer features)
       * [cl-repl](https://github.com/lisp-maintainers/cl-repl)
