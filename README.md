@@ -144,3 +144,10 @@ homepage: https://common-lisp.net/project/able/
 - open recent files
 - indentation on defun etc
 - highlight TODO FIXME etc.
+
+
+# Troubleshooting
+
+If the terminal you launched `able` from ever dies, you'll get errors in your ABLE window about "unable to write to STDOUT/broken pipe", but you *won't* be able to close the application. 
+
+To fix this execute `killall wish` from the command line, *unless you have other Tk-based applications running at the same time*, since this will kill every Tk-based application.
