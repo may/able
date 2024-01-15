@@ -49,9 +49,9 @@ homepage: https://common-lisp.net/project/able/
     git clone https://github.com/may/able.git
     ```
     
-5. Next time: launch the editor in one go (and auto-exit in one go):
+5. Launch the editor in one go (and auto-exit in one go):
     ```
-    sbcl --eval "(ql:quickload \"able\")" --eval "(able::start)" --eval "(exit)"
+    sbcl --noinform --eval "(ql:quickload \"able\")" --eval "(able::start)" --eval "(exit)"
     ```
 
     If you recieve the error: `Couldn't execute "wish": No such file or directory` then you forgot to install TK. See step 1. In the meantime, press '3' or whichever number corrosponds to the `Exit SBCL` option.
