@@ -95,11 +95,7 @@ homepage: https://common-lisp.net/project/able/
   - talk to the Lisp: macroexpand, load file or buffer, compile file, lookup symbol on the CLHS
   - etc
 
-
-Missing features:
-
-- graphical interactive debugger (only native debugger available)
-- saving REPL history across sessions
+# More screenshots
 
 ![image](https://github.com/may/able/assets/82888/5e0eadea-f874-46b5-8d9c-9b733ae6e689)
 
@@ -107,3 +103,17 @@ Missing features:
 ![](able1.png)
 
 ![](able2.png)
+
+# Missing features:
+
+- graphical interactive debugger (only native debugger available)
+- saving REPL history across sessions
+- git gutter
+- line 80 highlight
+- highlight current line
+- highlight unmatched parens
+- highlight *globals*
+- highlight "strings"
+- open recent files
+- indentation on defun etc
+- highlight TODO FIXME etc.

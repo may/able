@@ -18,9 +18,9 @@
   be scrolled using the mouse wheel but only this number of lines are displayed
   at a time.")
 
-(defparameter *buffer-font* "Courier 12 normal roman"
-  "The font used for the editor and REPL. Courier is guaranteed to be
-  available on all Tk platforms.")
+(defparameter *buffer-font* "TkFixedFont" ; "DejaVuSansMono 14"
+  "The font used for the editor and REPL. TkFixedFont is a Tk standard font that should
+  be present on all Tk platforms. https://tkdocs.com/tutorial/fonts.html")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -30,9 +30,11 @@
 ;;; names (refer to the Tcl/Tk documentation).
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Someday/Maybe: Utilize a popular default dark theme like Dracula.
 ; dark theme                                     ; light theme
 (defparameter *highlight-text* "#FFFFFF")        ; "#2D1E27") ; foreground
-(defparameter *highlight-background* "#000000")  ;"#FFFFFF")  ; background
+(defparameter *highlight-background* "#000000")  ; "#FFFFFF") ; background
 (defparameter *highlight-primary* "#99ccff")     ; "#1900D5") ; eg defun
 (defparameter *highlight-secondary* "#ff9999")   ; "#991C1C") ; eg CL-USER>
 (defparameter *highlight-comments* "#00ff00")    ; "#00732A") 
@@ -95,13 +97,14 @@
   copy on your machine. You must ensure that this uses a URL syntax understood
   by the browser specified in *web-browser* below")
 
+;; TODO improve on Windows; ideally determine each platform default browser
 (defparameter *web-browser*
   (first
    (list
     #+(or (and :clisp :win32) (and :sbcl :win32) (and :ccl :windows))
     "C:/Progra~1/Intern~1/iexplore.exe"
     #+(or (and :clisp :unix (not :macos)) (and :sbcl :linux) (and :ccl :linux))
-    "/usr/bin/firefox"
+    "xdg-open"
     #+(or (and :ccl :darwin) (and :clisp :macos) (and :sbcl :darwin))
     "open"
     ;; default
@@ -112,22 +115,3 @@
 
 (defparameter *watch-directories* nil
   "A list of directories to watch and parse for defining forms")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
