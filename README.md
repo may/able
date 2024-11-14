@@ -1,3 +1,5 @@
+Status: Currently erroring with latest everything on MacOS + SBCL; too many colons error, a date is in the error message, eg: |2024-11-14|.
+
 ABLE is a Common Lisp editor based on Tcl/Tk.
 
 homepage: https://common-lisp.net/project/able/
